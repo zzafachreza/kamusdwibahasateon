@@ -5,9 +5,13 @@ import {
     View,
     SafeAreaView,
     ActivityIndicator,
+    ScrollView,
+    Image,
 } from 'react-native';
 import WebView from 'react-native-webview';
 import { colors } from '../../utils/colors';
+import PDFView from 'react-native-view-pdf';
+import { windowHeight, windowWidth } from '../../utils';
 
 export default function Laporan({ route }) {
     const [user, setUser] = useState({});
@@ -17,40 +21,53 @@ export default function Laporan({ route }) {
         setVisible(false);
     };
 
-    const myUrl = `https://zavalabs.com/kamus_bahasa/api/petunjuk.php`;
+    const myUrl = `https://zavalabs.com/kamus_bahasa/teon/petunjuk.pdf`;
+
+    const myDATA = [
+        {
+            img: require('../../assets/p1.jpg')
+        },
+        {
+            img: require('../../assets/p2.jpg')
+        },
+        {
+            img: require('../../assets/p3.jpg')
+        },
+        {
+            img: require('../../assets/p4.jpg')
+        },
+        {
+            img: require('../../assets/p5.jpg')
+        },
+        {
+            img: require('../../assets/p6.jpg')
+        }
+    ]
 
     return (
         <SafeAreaView
             style={{
                 flex: 1,
-                padding: 10,
                 backgroundColor: colors.white
             }}>
-            <WebView
-                onLoad={hideSpinner}
-                injectedJavaScript={`const meta = document.createElement('meta'); meta.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'); meta.setAttribute('name', 'viewport'); `}
-                // injectedJavaScript={`const meta = document.createElement('meta'); meta.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'); meta.setAttribute('name', 'viewport'); document.getElementsByTagName('head')[0].appendChild(meta); `}
-                scalesPageToFit={false}
-                source={{
-                    uri: myUrl,
-                }}
-            />
-            {visible && (
-                <View
-                    style={{
-                        flex: 1,
-                        position: 'absolute',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        backgroundColor: '#FFF',
-                        width: '100%',
-                        top: 0,
-                        opacity: 0.7,
-                        height: '100%',
-                    }}>
-                    <ActivityIndicator color={colors.primary} size="large" />
-                </View>
-            )}
+            <ScrollView showsVerticalScrollIndicator={false}>
+                {myDATA.map(i => {
+                    return (
+
+                        <View style={{
+                            flex: 1,
+                        }}>
+                            <Image source={i.img} style={{
+                                width: windowWidth,
+                                height: windowHeight,
+                                left: 0, right: 0,
+                                resizeMode: 'contain'
+                            }} />
+                        </View>
+
+                    )
+                })}
+            </ScrollView>
         </SafeAreaView>
     );
 }

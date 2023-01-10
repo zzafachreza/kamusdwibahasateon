@@ -44,19 +44,8 @@ export default function ({ navigation }) {
                             color: colors.black,
                             marginBottom: 10,
                             textAlign: 'center'
-                        }}>Kamus Bahasa Serua</Text>
-                        <Text style={{
-                            fontFamily: fonts.secondary[600],
-                            fontSize: windowWidth / 20,
-                            color: colors.black,
-                            textAlign: 'center'
-                        }}>Indonesia
+                        }}>Kamus Dwibahasa Teon-Indonesia</Text>
 
-
-
-
-
-                        </Text>
                         <Text style={{
                             marginTop: 50,
                             fontFamily: fonts.secondary[400],
@@ -95,7 +84,7 @@ export default function ({ navigation }) {
                             color: colors.black,
                             textAlign: 'left'
                         }}>
-                            Kepala Kantor Bahasa Provinsi Maluku: Sahril, S.S., M.Pd
+                            Sahril
                         </Text>
 
                         <Text style={{
@@ -108,15 +97,6 @@ export default function ({ navigation }) {
                             Tim Penyusun :
                         </Text>
 
-                        <Text style={{
-                            marginTop: 5,
-                            fontFamily: fonts.secondary[400],
-                            fontSize: windowWidth / 20,
-                            color: colors.black,
-                            textAlign: 'left'
-                        }}>
-                            - Nita Handayani Hasan
-                        </Text>
                         <Text style={{
                             marginTop: 5,
                             fontFamily: fonts.secondary[400],
@@ -142,7 +122,25 @@ export default function ({ navigation }) {
                             color: colors.black,
                             textAlign: 'left'
                         }}>
+                            - Masnita Panjaitan
+                        </Text>
+                        <Text style={{
+                            marginTop: 5,
+                            fontFamily: fonts.secondary[400],
+                            fontSize: windowWidth / 20,
+                            color: colors.black,
+                            textAlign: 'left'
+                        }}>
                             - Indrayadi
+                        </Text>
+                        <Text style={{
+                            marginTop: 5,
+                            fontFamily: fonts.secondary[400],
+                            fontSize: windowWidth / 20,
+                            color: colors.black,
+                            textAlign: 'left'
+                        }}>
+                            - Inten Aprilia T.K.
                         </Text>
 
                     </View>
