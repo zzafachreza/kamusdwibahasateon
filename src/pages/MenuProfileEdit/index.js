@@ -115,15 +115,7 @@ export default function ({ navigation }) {
                         }}>
                             - Masnita Panjaitan
                         </Text>
-                        <Text style={{
-                            marginTop: 5,
-                            fontFamily: fonts.secondary[400],
-                            fontSize: windowWidth / 20,
-                            color: colors.black,
-                            textAlign: 'left'
-                        }}>
-                            - Masnita Panjaitan
-                        </Text>
+
                         <Text style={{
                             marginTop: 5,
                             fontFamily: fonts.secondary[400],

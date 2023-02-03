@@ -29,7 +29,7 @@ export default function ({ navigation, route }) {
           fontSize: windowWidth / 15,
         }}>/</Text>
         <Text style={{
-          fontFamily: fonts.secondary.normal,
+          fontFamily: item.lafal.indexOf(";") > 0 ? fonts.secondary[400] : fonts.secondary.normal,
           fontSize: windowWidth / 15,
           fontWeight: 'normal',
           color: colors.black,
