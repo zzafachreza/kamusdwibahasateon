@@ -28,12 +28,42 @@ export default function ({ navigation, route }) {
           fontWeight: 'normal',
           fontSize: windowWidth / 15,
         }}>/</Text>
-        <Text style={{
-          fontFamily: item.lafal.indexOf(";") > 0 ? fonts.secondary[400] : fonts.secondary.normal,
-          fontSize: windowWidth / 15,
-          fontWeight: 'normal',
-          color: colors.black,
-        }}>{item.lafal}</Text>
+        {item.lafal.indexOf(";") <= 0 &&
+          <Text style={{
+            fontFamily: fonts.secondary.normal,
+            fontSize: windowWidth / 15,
+            fontWeight: 'normal',
+            color: colors.black,
+          }}>{item.lafal}</Text>
+        }
+
+
+
+
+        {item.lafal.indexOf(";") > 0 &&
+          <>
+            <Text style={{
+              fontFamily: fonts.secondary.normal,
+              fontSize: windowWidth / 15,
+              fontWeight: 'normal',
+              color: colors.black,
+            }}>{item.lafal.split(";")[0]}</Text>
+            <Text style={{
+              fontFamily: fonts.secondary[400],
+              fontSize: windowWidth / 15,
+              fontWeight: 'normal',
+              color: colors.black,
+            }}>;</Text>
+            <Text style={{
+              fontFamily: fonts.secondary.normal,
+              fontSize: windowWidth / 15,
+              fontWeight: 'normal',
+              color: colors.black,
+            }}>{item.lafal.split(";")[1]}</Text>
+          </>
+        }
+
+
         <Text style={{
           fontFamily: fonts.primary[400],
           fontWeight: 'normal',
